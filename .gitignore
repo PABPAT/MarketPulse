@@ -1,0 +1,31 @@
+# === SECRETS - NEVER COMMIT ===
+.env
+
+# === PYTHON ===
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# === PYCHARM ===
+.idea/
+
+# === DATA FILES (too large for GitHub) ===
+*.csv
+*.json.bak
+*.pkl
+*.parquet
+
+# === LOGS ===
+*.log
+logs/
+
+# === OS FILES ===
+.DS_Store
+Thumbs.db
