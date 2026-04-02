@@ -277,8 +277,8 @@ systems using the Zerve AI platform.
 **[Your Name]**
 
 - GitHub: [@PABPAT](https://github.com/PABPAT)
-- LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
-- Email: you@email.com
+- LinkedIn: [linkedin.com/in/yourprofile](https://www.linkedin.com/in/poornaabhijithpatel/)
+- Email: poornaabhijith@email.com
 
 ---
 
