@@ -1,0 +1,130 @@
+# MarketPulse — Project Story
+*Living document — updated as we build. Last updated: April 2, 2026*
+
+---
+
+## The Question We Started With
+> "Are prediction markets actually accurate, and where do they disagree with each other?"
+
+---
+
+## The Original Hypothesis
+Polymarket and Kalshi both let people bet on the same real-world events.
+If they price the same event differently, that gap is a tradeable arbitrage opportunity.
+We set out to find those gaps automatically, in real time.
+
+---
+
+## What We Built
+MarketPulse — a live prediction market intelligence platform that:
+- Ingests real-time odds from Polymarket and Kalshi
+- Detects pricing discrepancies between platforms
+- Measures how calibrated (accurate) each platform's markets are historically
+- Serves everything through a deployed REST API and interactive dashboard
+
+---
+
+## What We Discovered (Updated as we go)
+
+### Finding 1 — April 2, 2026
+**Polymarket has massive volume on macroeconomic and geopolitical markets.**
+- "US forces enter Iran by March 31?" — $71M traded, $14M in last 24 hours
+- "Will Bitcoin close above $98,000?" — $48K volume
+- "Will the Fed raise rates by June 2026?" — $38K volume
+- 41 active markets with real trading volume in 2026
+
+### Finding 2 — April 2, 2026
+**Kalshi's sports API and Polymarket don't overlap at all.**
+- First Kalshi endpoint tried (elections API) returned only sports props
+- NBA/NHL/MLB parlays — zero semantic match with Polymarket's macro markets
+- This revealed that the two platforms have carved out different market segments
+- Polymarket = macro/geopolitical. Kalshi sports API = sports props
+
+### Finding 3 — PENDING
+**Does the correct Kalshi financial API have overlapping markets?**
+- Testing: trading-api.kalshi.com/trade-api/v2/markets
+- Looking for: Fed, rates, Bitcoin, elections, inflation, recession
+- Result: TBD — update after next Zerve run
+
+---
+
+## Pivots & Decisions
+
+### Pivot 1 — April 2, 2026
+**Original plan:** Cross-platform arbitrage between Polymarket and Kalshi
+**What we found:** Platforms operate in different segments (macro vs sports)
+**Decision:** Test correct Kalshi financial endpoint first. If overlap exists → original plan holds. If not → pivot to intra-platform arbitrage within Polymarket (related markets that should be logically consistent but aren't)
+
+---
+
+## The Narrative Arc (Draft — refine as findings come in)
+
+Prediction markets are supposed to be the most accurate forecasting tools ever created. We set out to find where two of the biggest platforms — Polymarket and Kalshi — disagree on the same event.
+
+What we found was more interesting than we expected.
+
+[UPDATE THIS SECTION ONCE FINDING 3 IS CONFIRMED]
+
+---
+
+## Key Numbers (Fill in as analysis completes)
+- Total markets analyzed: **TBD**
+- Platforms compared: **Polymarket + Kalshi**
+- Arbitrage opportunities found: **TBD**
+- Average spread on flagged markets: **TBD**
+- Calibration score — Polymarket: **TBD**
+- Calibration score — Kalshi: **TBD**
+- API endpoints deployed: **3** (/arbitrage, /calibration, /odds)
+
+---
+
+## Devpost 300-Word Summary (Draft — complete after analysis)
+
+Prediction markets like Polymarket and Kalshi let thousands of people bet real money on future events — Fed decisions, elections, Bitcoin prices. In theory they're the most accurate forecasting tools ever built. In practice, we wanted to know: where are they wrong, and where do they disagree with each other?
+
+We built MarketPulse to answer that question automatically, in real time.
+
+[INSERT KEY FINDING HERE ONCE CONFIRMED]
+
+Our platform ingests live odds from both Polymarket and Kalshi, normalizes them into a unified format, and runs two analyses continuously. First, our arbitrage detector scans all active markets and flags cross-platform pricing discrepancies above a meaningful threshold. Second, our calibration engine measures whether each platform's prices are actually accurate — when a market is priced at 70%, does it resolve correctly 70% of the time?
+
+Everything is served through three live REST API endpoints and an interactive dashboard. This isn't a notebook. It's a production system anyone can query right now.
+
+[INSERT MOST SURPRISING FINDING HERE]
+
+Built end-to-end on Zerve in 27 days.
+
+---
+
+## Demo Video Script (3 minutes — draft)
+
+**[0:00 - 0:30] Hook**
+"Two prediction markets. Same event. Different prices. Someone is wrong."
+Show the live dashboard with arbitrage opportunities highlighted.
+
+**[0:30 - 1:30] The Problem**
+Explain what prediction markets are and why cross-platform discrepancies matter.
+Show the raw data from both platforms side by side.
+
+**[1:30 - 2:30] The Solution**
+Walk through the three API endpoints live.
+Show the arbitrage detection algorithm in action.
+Show the calibration charts.
+
+**[2:30 - 3:00] The Finding**
+[INSERT KEY INSIGHT HERE]
+"This is MarketPulse. Built on Zerve."
+
+---
+
+## Resume Bullet Points (Final — fill numbers in later)
+
+- Built a real-time data pipeline aggregating live odds from Polymarket and Kalshi APIs across **TBD** concurrent markets
+- Implemented cross-platform arbitrage detection algorithm identifying pricing discrepancies with **TBD%** average spread
+- Designed and deployed 3 REST API endpoints serving live market data, calibration stats, and arbitrage signals
+- Built interactive dashboard with sortable arbitrage table and calibration accuracy charts
+- **Placed [X] / Won $[X]** — ZerveHack 2026 ($10,000 prize pool)
+
+---
+
+*Update this file after every Zerve session. The findings section becomes the hackathon story.*
